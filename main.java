@@ -1,15 +1,27 @@
-package oop.generics.generic.comparing;
+package oop.interfaces;
 
 public class main {
     public static void main(String[] args) {
-        Student s1=new Student(34, 56.78f);
-        Student s2=new Student(23, 45.67f);
-        /*if(s1.compareTo(s2) > 0){
-            System.out.println("s1 score more marks");
-        } else if (s1.compareTo(s2) < 0){
-            System.out.println("s2 has more marks");
-        } else {
-            System.out.println("both have equal marks");
-        }*/
+//        car car=new car();
+//        car.acc();
+//        car.brake();
+//        car.start();
+//        car.stop();
+//
+//        media carmedia=new car();
+//        carmedia.start();
+        // trying to start the music player but the engine start bcz both engine and media
+        // interfaces have the same method names called start and stop
+        // how to solve this?
+        // we can create different classes for engine and media player
+
+        niceCar car=new niceCar(new PowerEngine());
+        car.start();
+        car.stop();
+        car.updateEngine();
+        car.startMedia();
+        car.start();
+        car.stop();
+        car.stopMedia();
     }
 }
