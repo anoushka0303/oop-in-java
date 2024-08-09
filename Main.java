@@ -1,36 +1,41 @@
-package staticExample;
+package oop.properties;
 
 public class Main {
-    public static void main(String[] args){
-        Human human=new Human(21,"anoushka",0,false);
-        Human human2=new Human(30,"martin",0,true);
-        // what is there was a property that was common to all the "Human" objects?
-        //e.g.: population
-        //the population is not directly related to the object, it is independent
-        //those properties ehich are not direct related to the object are called static varibales
-        // or static methods
-        System.out.println(Human.pop);
-        System.out.println(Human.pop);
-        // "human2.pop" would also have worked
-        // the result is wrong, it should be bcz there are two humans
-        //greeting();
-        // showing an error when greeting method is not declared static
-        // this is because we cannot use anything non static in a static method
-        // why? something that is not static belongs to an object
-        // non static -> will have an instance, while static will not
-        // without resolving which instance of the object we're talking about, we therefore
-        //cannot use a non static method
-        Main obj=new Main();
-        obj.greeting();
-        //this works even though greeting is a non static method because we created an
-        //instance of the main class
-        // greeting needed an object to be run and now an object is created
+    // four fundamental properties of oop are :
+    // 1. inheritance 2. abstraction 3. polymorphism 4. encapsulation
+    // inheritance : the child class inherits properties from base class
+    public static void main(String[] args) {
+        // inheritance
+        parent p1=new parent();
+        System.out.println((p1.length));
+        parent p2=new child(1,2,3,4);
+        System.out.println(p2.width);
+        //even if weight is initialized, it is not able to access it
+        //it is the type of the reference variable and not the object that determins what
+        //properties can be accessed
+        //when a reference of a sub class object is assigned to a super class variable
+        //you will have access to only those parts which are accessable to super class
+        // the opposite cannot be done as parent class has no idea about the properties of
+        // child class
+
+        // polymorphism
+        // type 1 : compile time or static polymorphism : method overloading
+        //          when the class has multiple methods of the same name but the no. type
+        //          and order of parameters are different. java determines which method or constructor
+        //          will be called at compile time
+        // type 2 : run time or dynamic polymorphism : method overriding
+        //
+        shape sh=new shape();
+        circle cir=new circle();
+        square sq=new square();
+        shape square=new square();
+        square.area(); // since the area method of shape is overriden by the area method of
+        // of square therefore, the area method of square is printed
+        // it depends on what type of object it is
+        // Parent obj=new Child(); -> here, the method which will be called depends on the type oof object and this is known as up-casting
+        // this is how overriding works
+        // how does java determine this? by something known as dynamic method dispatch
+        // it is a method by which a call to an overridden method is resolved at runtime rather than compile time
+
     }
-    void greeting(){
-        System.out.println("hello world");
-    }
-    /*@Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }*/
 }
