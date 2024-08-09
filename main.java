@@ -1,14 +1,15 @@
-package oop.accessmodifiers;
+package oop.generics.generic.comparing;
 
 public class main {
     public static void main(String[] args) {
-        accessModifiers x= new accessModifiers(24,"rooh");
-        // need to do a few things
-        // 1. access the data members
-        // 2. modify the data members
-        System.out.println((x.name)); // cannot be accessed out of it's class
-        // this is data hiding
-        // we can do this using getters and setters
-        int num = x.getNum();
+        Student s1=new Student(34, 56.78f);
+        Student s2=new Student(23, 45.67f);
+        /*if(s1.compareTo(s2) > 0){
+            System.out.println("s1 score more marks");
+        } else if (s1.compareTo(s2) < 0){
+            System.out.println("s2 has more marks");
+        } else {
+            System.out.println("both have equal marks");
+        }*/
     }
 }
